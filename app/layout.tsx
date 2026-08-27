@@ -6,6 +6,7 @@ import { DepthBackground } from "@/components/ocean/DepthBackground";
 import { ZoneBackground } from "@/components/ocean/ZoneBackground";
 import { BubbleCanvas } from "@/components/ocean/BubbleCanvas";
 import { DepthGaugeHUD } from "@/components/ocean/DepthGaugeHUD";
+import { ReturnHomeButton } from "@/components/ocean/ReturnHomeButton";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <BubbleCanvas />
           <ZoneBackground />
           <DepthGaugeHUD />
+          <ReturnHomeButton />
           <div className="relative z-10">{children}</div>
         </DepthProvider>
       </body>

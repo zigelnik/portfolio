@@ -11,7 +11,7 @@ export function Contact() {
       id="contact"
       className="relative flex min-h-[70vh] flex-col justify-center px-6 py-28 sm:px-10 lg:px-16"
     >
-      <SeaCreatures variant="floor" />
+      <SeaCreatures variant="abyssal" />
       <div className="relative z-[2] mx-auto max-w-2xl text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }}

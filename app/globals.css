@@ -117,6 +117,24 @@
   }
 }
 
+@keyframes shark-cruise {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(35vw) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(70vw) rotate(0deg);
+  }
+  75% {
+    transform: translateX(105vw) rotate(2deg);
+  }
+  100% {
+    transform: translateX(140vw) rotate(0deg);
+  }
+}
+
 @keyframes starfish-glimmer {
   0%,
   100% {

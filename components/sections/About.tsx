@@ -13,7 +13,7 @@ const FOCUS_AREAS = [
 export function About() {
   return (
     <section id="about" className="relative px-6 py-28 sm:px-10 lg:px-16">
-      <SeaCreatures />
+      <SeaCreatures variant="sunlight" />
       <div className="relative z-[2] mx-auto max-w-4xl">
         <motion.p
           initial={{ opacity: 0, y: 16 }}

@@ -31,7 +31,7 @@ export function Experience() {
       id="experience"
       className="relative px-6 py-28 sm:px-10 lg:px-16"
     >
-      <SeaCreatures />
+      <SeaCreatures variant="twilight" />
       <div className="relative z-[2] mx-auto max-w-5xl">
         <motion.p
           initial={{ opacity: 0, y: 16 }}

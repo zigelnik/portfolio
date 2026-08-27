@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { Project } from "@/lib/github";
 import { ProjectFilters, type FilterValue } from "./ProjectFilters";
 import { ProjectCard } from "./ProjectCard";
+import { SeaCreatures } from "../../ocean/SeaCreatures";
 
 export function ProjectGrid({ projects }: { projects: Project[] }) {
   const [filter, setFilter] = useState<FilterValue>("All Projects");
@@ -16,7 +17,8 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
 
   return (
     <section id="projects" className="relative px-6 py-28 sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-5xl">
+      <SeaCreatures variant="edge" />
+      <div className="relative z-[2] mx-auto max-w-5xl">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

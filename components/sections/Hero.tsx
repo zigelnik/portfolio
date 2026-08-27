@@ -10,12 +10,16 @@ import { SeaCreatures } from "../ocean/SeaCreatures";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col px-6 sm:px-10 lg:px-16">
-      <SeaCreatures variant="hero" />
+    <section id="home" className="relative flex min-h-screen flex-col px-6 sm:px-10 lg:px-16">
+      <SeaCreatures variant="surface" />
       <header className="relative z-[2] flex items-center justify-between py-6">
-        <span className="font-mono text-xs uppercase tracking-[0.2em] text-abyssal-black/70">
+        <button
+          type="button"
+          onClick={() => scrollToHash("#home")}
+          className="font-mono text-xs uppercase tracking-[0.2em] text-abyssal-black/70 transition-colors hover:text-abyssal-black"
+        >
           TZ &middot; Dive Log
-        </span>
+        </button>
         <DesktopNav />
         <SubmarineDrawer />
       </header>

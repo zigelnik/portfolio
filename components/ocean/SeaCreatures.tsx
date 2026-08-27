@@ -103,16 +103,21 @@ function Stingray({ top, duration, delay = 0, scale = 1, flip, opacity = 0.35 }:
       style={{ top, opacity, transform: `scale(${scale}) ${flip ? "scaleX(-1)" : ""}` }}
     >
       <div style={{ animation: `ray-glide ${duration}s ease-in-out ${delay}s infinite` }}>
-        <svg width="86" height="40" viewBox="0 0 86 40" fill="none">
+        <svg width="90" height="40" viewBox="0 0 90 40" fill="none">
+          {/* whip tail, trailing behind on the left */}
           <path
-            d="M44 4C24 4 4 14 4 20c0 6 20 16 40 16 6 0 8-4 8-10V14c0-6-2-10-8-10Z"
+            d="M18 20Q8 22 1 27"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            fill="none"
+          />
+          {/* disc-shaped body, snout pointing right (direction of travel) */}
+          <path
+            d="M18 20C18 8 40 2 76 20C40 38 18 32 18 20Z"
             fill="currentColor"
           />
-          <path
-            d="M52 20c14-2 24 6 30 10-8 2-20 2-30-4Z"
-            fill="currentColor"
-            fillOpacity="0.6"
-          />
+          <circle cx="69" cy="17" r="1.2" fill="#04262c" />
         </svg>
       </div>
     </div>
@@ -143,6 +148,69 @@ function Crab({ bottom, duration, delay = 0, scale = 1, opacity = 0.45 }: DriftP
   );
 }
 
+function Shark({ top, duration, delay = 0, scale = 1, flip, opacity = 0.35 }: DriftProps) {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute left-[-16%] z-[1]"
+      style={{ top, opacity, transform: `scale(${scale}) ${flip ? "scaleX(-1)" : ""}` }}
+    >
+      <div style={{ animation: `shark-cruise ${duration}s ease-in-out ${delay}s infinite` }}>
+        <svg width="112" height="46" viewBox="0 0 112 46" fill="none">
+          <g fill="currentColor">
+            {/* tail fin, apex pointing into the body */}
+            <path d="M10 23 0 14v18Z" />
+            {/* torpedo body tapering to a snout point on the right */}
+            <path d="M10 23c0-6 14-10 34-10 26 0 46 4 56 8 3 1 3 4 0 5-10 4-30 8-56 8-20 0-34-4-34-11Z" />
+            {/* dorsal fin */}
+            <path d="M46 13c1-7 6-12 9-11 2 1 0 7-3 12-3 4-7 3-6-1Z" />
+            {/* pectoral fin */}
+            <path d="M56 27c1 6-2 10-5 10-2 0-3-6-1-10 2-3 5-3 6 0Z" />
+          </g>
+          {/* gill lines */}
+          <g stroke="rgba(0,0,0,0.25)" strokeWidth="1" strokeLinecap="round">
+            <path d="M78 17v10M83 16v11M88 16v11" />
+          </g>
+          <circle cx="94" cy="20" r="1.3" fill="#04262c" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+function Anglerfish({ top, duration, delay = 0, scale = 1, flip, opacity = 0.4 }: DriftProps) {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute right-[10%] z-[1]"
+      style={{ top, opacity, transform: `scale(${scale}) ${flip ? "scaleX(-1)" : ""}` }}
+    >
+      <div style={{ animation: `fish-drift ${duration}s linear ${delay}s infinite` }}>
+        <svg width="70" height="52" viewBox="0 0 70 52" fill="none">
+          <g fill="currentColor">
+            {/* tail, apex pointing into the body */}
+            <path d="M14 26 3 19v14Z" />
+            {/* hunched body */}
+            <path d="M14 26c0-10 10-18 22-18 12 0 20 8 20 18s-8 18-20 18c-12 0-22-8-22-18Z" />
+            {/* underslung jaw */}
+            <path d="M48 30c4 2 8 1 10-1-1 4-7 6-10 3Z" />
+          </g>
+          <circle cx="30" cy="20" r="1.6" fill="#04262c" />
+          {/* lure stalk, dangling above the mouth */}
+          <path
+            d="M40 12c1-6 2-10 4-11"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            fill="none"
+          />
+          <circle cx="45" cy="1" r="2.4" className="fill-bio-glow animate-sonar-pulse" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
 function Starfish({ top, bottom, duration, delay = 0, scale = 1, opacity = 0.3 }: DriftProps) {
   return (
     <div
@@ -162,19 +230,22 @@ function Starfish({ top, bottom, duration, delay = 0, scale = 1, opacity = 0.3 }
   );
 }
 
-type Variant = "hero" | "shallow" | "reef" | "floor";
+type Variant = "surface" | "sunlight" | "edge" | "threshold" | "twilight" | "abyssal";
 
 /**
  * Decorative underwater life scattered across sections. Pure CSS
  * keyframe animation (not rAF/Lenis-driven) so it stays lightweight
- * and independent of scroll timing. `variant` swaps the creature mix
- * so different depth zones feel distinct rather than repeating the
- * same pair of silhouettes everywhere.
+ * and independent of scroll timing. `variant` maps one-to-one to the
+ * page's own depth zones, so the mix of creatures shifts from
+ * reef/shallow fauna (turtles, fish, crabs, starfish) near the
+ * surface to deep-sea fauna (jellyfish, sharks, anglerfish) as the
+ * page darkens, rather than reusing the same pair everywhere.
  */
-export function SeaCreatures({ variant = "shallow" }: { variant?: Variant }) {
+export function SeaCreatures({ variant = "sunlight" }: { variant?: Variant }) {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-      {variant === "hero" && (
+      {/* 0m · Surface — turtles cruising near the light, one starfish below */}
+      {variant === "surface" && (
         <>
           <SeaTurtle top="14%" duration={50} scale={0.6} opacity={0.3} />
           <SeaTurtle top="74%" duration={58} delay={8} scale={0.4} flip opacity={0.2} />
@@ -182,7 +253,8 @@ export function SeaCreatures({ variant = "shallow" }: { variant?: Variant }) {
         </>
       )}
 
-      {variant === "shallow" && (
+      {/* ~50m · Sunlight Zone — classic reef-floor mix */}
+      {variant === "sunlight" && (
         <>
           <FishSchool top="18%" duration={38} scale={0.9} opacity={0.35} />
           <FishSchool top="55%" duration={46} delay={6} scale={0.6} flip opacity={0.25} />
@@ -191,20 +263,39 @@ export function SeaCreatures({ variant = "shallow" }: { variant?: Variant }) {
         </>
       )}
 
-      {variant === "reef" && (
+      {/* ~150m · Edge of the Sunlight Zone — still light-dependent, larger fauna */}
+      {variant === "edge" && (
         <>
-          <SeaTurtle top="22%" duration={52} scale={1} opacity={0.4} />
-          <Stingray top="55%" duration={9} scale={1} opacity={0.3} />
-          <Starfish bottom="10%" duration={5} scale={1} opacity={0.3} />
+          <SeaTurtle top="20%" duration={54} scale={0.8} opacity={0.3} />
+          <FishSchool top="60%" duration={40} delay={4} scale={0.7} flip opacity={0.3} />
+          <Stingray top="42%" duration={9} scale={0.8} opacity={0.25} />
         </>
       )}
 
-      {variant === "floor" && (
+      {/* ~250m · Twilight Threshold — last ray of light fading, first jellyfish */}
+      {variant === "threshold" && (
         <>
-          <Crab bottom="6%" duration={4.5} scale={1.1} opacity={0.45} />
-          <Crab bottom="14%" duration={5.5} delay={1.5} scale={0.7} opacity={0.3} />
-          <Jellyfish top="20%" duration={9} scale={0.6} opacity={0.3} />
-          <Starfish bottom="20%" duration={6} delay={1} scale={0.8} opacity={0.25} />
+          <Stingray top="45%" duration={9} scale={1} opacity={0.28} />
+          <Jellyfish top="20%" duration={8} scale={0.7} opacity={0.28} />
+          <Jellyfish bottom="12%" duration={9.5} delay={2} scale={0.5} opacity={0.22} />
+        </>
+      )}
+
+      {/* ~400m · Twilight Zone — deep-sea fauna only, a shark on patrol */}
+      {variant === "twilight" && (
+        <>
+          <Jellyfish top="18%" duration={8.5} scale={0.7} opacity={0.3} />
+          <Jellyfish bottom="16%" duration={7.5} delay={1.5} scale={0.5} opacity={0.22} />
+          <Shark top="55%" duration={26} scale={0.7} opacity={0.28} />
+        </>
+      )}
+
+      {/* ~1000m · Abyssal Trench — pure deep-sea, bioluminescent lure glowing */}
+      {variant === "abyssal" && (
+        <>
+          <Shark top="30%" duration={30} scale={0.9} flip opacity={0.3} />
+          <Jellyfish bottom="14%" duration={8} scale={0.6} opacity={0.25} />
+          <Anglerfish top="62%" duration={44} delay={5} scale={0.9} opacity={0.35} />
         </>
       )}
     </div>
