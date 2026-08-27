@@ -65,30 +65,32 @@ function SeaTurtle({ top, duration, delay = 0, scale = 1, flip, opacity = 0.4 }:
       style={{ top, opacity, transform: `scale(${scale}) ${flip ? "scaleX(-1)" : ""}` }}
     >
       <div style={{ animation: `turtle-drift ${duration}s linear ${delay}s infinite` }}>
-        <svg width="84" height="52" viewBox="0 0 84 52" fill="none">
+        <svg width="90" height="56" viewBox="0 0 90 56" fill="none">
           <g fill="currentColor">
-            {/* back flippers */}
-            <path d="M12 15c-6-4-13-1-11 3s9 2 13-1Z" />
-            <path d="M12 37c-6 4-13 1-11-3s9-2 13 1Z" />
+            {/* back flippers, swept backward */}
+            <path d="M16 15c-8-5-17-3-15 2 2 4 11 4 15 1Z" />
+            <path d="M16 41c-8 5-17 3-15-2 2-4 11-4 15-1Z" />
             {/* tail */}
-            <path d="M16 26 5 21v10Z" />
+            <path d="M19 28 7 22v12Z" />
             {/* shell */}
-            <ellipse cx="44" cy="26" rx="27" ry="17" />
-            {/* front flippers */}
-            <path d="M67 13c7-5 15-2 12 3s-10 2-14-1Z" />
-            <path d="M67 39c7 5 15 2 12-3s-10-2-14 1Z" />
+            <ellipse cx="41" cy="28" rx="25" ry="17" />
+            {/* front flippers, swept forward */}
+            <path d="M61 13c8-5 17-2 14 3-2 4-11 3-14-1Z" />
+            <path d="M61 43c8 5 17 2 14-3-2-4-11-3-14 1Z" />
+            {/* neck */}
+            <path d="M63 21c3-1 6-1 7 1v12c-1 2-4 2-7 1Z" />
             {/* head */}
-            <path d="M68 18c6-4 13-2 14 3 1 5-4 9-9 9-4 0-6-4-5-12Z" />
+            <ellipse cx="78" cy="28" rx="9" ry="7.5" />
           </g>
-          {/* shell scute pattern */}
-          <g stroke="rgba(0,0,0,0.2)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M44 10v32" />
-            <path d="M20 26h48" />
-            <path d="M28 15l12 11-12 11" />
-            <path d="M60 15 48 26l12 11" />
+          {/* shell scute pattern: a row of 3 vertebral plates, not a radiating star */}
+          <g stroke="rgba(0,0,0,0.2)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M23 20Q41 15 59 20" />
+            <path d="M23 36Q41 41 59 36" />
+            <path d="M36 20.5v15" />
+            <path d="M46 20.5v15" />
           </g>
           {/* eye */}
-          <circle cx="78" cy="24" r="1.4" fill="#04262c" />
+          <circle cx="82" cy="25" r="1.5" fill="#04262c" />
         </svg>
       </div>
     </div>
@@ -103,21 +105,24 @@ function Stingray({ top, duration, delay = 0, scale = 1, flip, opacity = 0.35 }:
       style={{ top, opacity, transform: `scale(${scale}) ${flip ? "scaleX(-1)" : ""}` }}
     >
       <div style={{ animation: `ray-glide ${duration}s ease-in-out ${delay}s infinite` }}>
-        <svg width="90" height="40" viewBox="0 0 90 40" fill="none">
+        <svg width="100" height="70" viewBox="0 0 100 70" fill="none">
           {/* whip tail, trailing behind on the left */}
           <path
-            d="M18 20Q8 22 1 27"
+            d="M18 35Q8 38 1 44"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.5"
             strokeLinecap="round"
             fill="none"
           />
-          {/* disc-shaped body, snout pointing right (direction of travel) */}
+          {/* delta-winged disc: short trailing edge into a long sweeping
+              leading edge, with an angular shoulder at each wing tip so it
+              reads as wings rather than a smooth leaf/oval */}
           <path
-            d="M18 20C18 8 40 2 76 20C40 38 18 32 18 20Z"
+            d="M18 35L44 4Q72 10 94 35Q72 60 44 66Z"
             fill="currentColor"
           />
-          <circle cx="69" cy="17" r="1.2" fill="#04262c" />
+          <circle cx="80" cy="28" r="1.6" fill="#04262c" />
+          <circle cx="80" cy="42" r="1.6" fill="#04262c" />
         </svg>
       </div>
     </div>
