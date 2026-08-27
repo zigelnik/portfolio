@@ -4,6 +4,7 @@ import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { NAV_LINKS } from "./links";
 import { useDepth } from "../ocean/DepthProvider";
+import { scrollToHash } from "@/lib/lenis";
 
 export function SubmarineDrawer() {
   const [open, setOpen] = useState(false);
@@ -54,7 +55,11 @@ export function SubmarineDrawer() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpen(false);
+                  window.setTimeout(() => scrollToHash(link.href), 150);
+                }}
                 className="group flex items-center gap-3 rounded-lg px-2 py-3 text-lg font-medium text-foam-white transition-colors hover:text-bio-glow"
               >
                 <span className="font-mono text-xs text-foam-white/40 group-hover:text-bio-glow">

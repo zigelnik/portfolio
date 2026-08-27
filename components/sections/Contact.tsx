@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ButtonLink } from "../ui/Button";
+import { ContactModal } from "./ContactModal";
 
 export function Contact() {
   return (
@@ -43,10 +44,14 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-8 flex flex-wrap justify-center gap-3"
+          className="mt-8 flex flex-wrap items-center justify-center gap-3"
         >
-          <ButtonLink href="mailto:zigelnik@gmail.com">
+          <ContactModal />
+          <ButtonLink variant="ghost" href="mailto:zigelnik@gmail.com">
             zigelnik@gmail.com
+          </ButtonLink>
+          <ButtonLink variant="ghost" href="tel:+972523466986">
+            +972 (052) 346-6986
           </ButtonLink>
           <ButtonLink
             variant="ghost"

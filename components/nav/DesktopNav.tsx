@@ -1,4 +1,7 @@
+"use client";
+
 import { NAV_LINKS } from "./links";
+import { scrollToHash } from "@/lib/lenis";
 
 export function DesktopNav() {
   return (
@@ -7,6 +10,10 @@ export function DesktopNav() {
         <a
           key={link.href}
           href={link.href}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToHash(link.href);
+          }}
           className="font-mono text-xs uppercase tracking-[0.15em] text-foam-white/70 transition-colors hover:text-bio-glow"
         >
           {link.label}

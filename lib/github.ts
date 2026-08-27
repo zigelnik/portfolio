@@ -1,11 +1,13 @@
 import { PROJECT_SEEDS, type ProjectSeed } from "./projects";
 
-export interface Project extends ProjectSeed {
+export interface RepoInfo {
   stars: number;
   primaryLanguage: string | null;
   updatedAt: string | null;
   htmlUrl: string;
 }
+
+export interface Project extends ProjectSeed, RepoInfo {}
 
 interface GitHubRepoResponse {
   html_url: string;
@@ -14,17 +16,16 @@ interface GitHubRepoResponse {
   pushed_at: string | null;
 }
 
-async function fetchRepo(seed: ProjectSeed): Promise<Project> {
-  const fallback: Project = {
-    ...seed,
+export async function fetchRepoInfo(repo: string): Promise<RepoInfo> {
+  const fallback: RepoInfo = {
     stars: 0,
     primaryLanguage: null,
     updatedAt: null,
-    htmlUrl: `https://github.com/${seed.repo}`,
+    htmlUrl: `https://github.com/${repo}`,
   };
 
   try {
-    const res = await fetch(`https://api.github.com/repos/${seed.repo}`, {
+    const res = await fetch(`https://api.github.com/repos/${repo}`, {
       headers: { Accept: "application/vnd.github+json" },
       next: { revalidate: 3600 },
     });
@@ -32,7 +33,6 @@ async function fetchRepo(seed: ProjectSeed): Promise<Project> {
 
     const data = (await res.json()) as GitHubRepoResponse;
     return {
-      ...seed,
       stars: data.stargazers_count,
       primaryLanguage: data.language,
       updatedAt: data.pushed_at,
@@ -44,5 +44,10 @@ async function fetchRepo(seed: ProjectSeed): Promise<Project> {
 }
 
 export async function getProjects(): Promise<Project[]> {
-  return Promise.all(PROJECT_SEEDS.map(fetchRepo));
+  return Promise.all(
+    PROJECT_SEEDS.map(async (seed) => ({
+      ...seed,
+      ...(await fetchRepoInfo(seed.repo)),
+    }))
+  );
 }

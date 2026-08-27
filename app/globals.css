@@ -53,6 +53,7 @@
 
 html {
   scroll-behavior: auto;
+  overflow-x: hidden;
 }
 
 body {
@@ -64,6 +65,7 @@ body {
   color: var(--depth-fg);
   font-family: var(--font-sans);
   transition: color 0.6s ease;
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {

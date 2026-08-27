@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ButtonLink } from "../ui/Button";
 import { DesktopNav } from "../nav/DesktopNav";
 import { SubmarineDrawer } from "../nav/SubmarineDrawer";
+import { scrollToHash } from "@/lib/lenis";
 
 export function Hero() {
   return (
@@ -50,7 +51,15 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="flex flex-wrap gap-3 pt-2"
         >
-          <ButtonLink href="#projects">View projects</ButtonLink>
+          <ButtonLink
+            href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToHash("#projects");
+            }}
+          >
+            View projects
+          </ButtonLink>
           <ButtonLink
             variant="ghost"
             href="https://github.com/zigelnik"
