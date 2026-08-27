@@ -9,7 +9,12 @@ import {
   type ReactNode,
 } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
-import { progressToDepth, zoneForDepth, type DepthZone } from "@/lib/theme";
+import {
+  progressToDepth,
+  zoneForDepth,
+  depthGradientColors,
+  type DepthZone,
+} from "@/lib/theme";
 import { useLenis } from "@/lib/lenis";
 
 interface DepthContextValue {
@@ -26,18 +31,6 @@ const DepthContext = createContext<DepthContextValue>({
 
 export function useDepth() {
   return useContext(DepthContext);
-}
-
-const ZONE_COLORS: [string, string][] = [
-  ["#7de8e0", "#1e8fb0"], // Surface -> Sunlight
-  ["#1e8fb0", "#1a3a6b"], // Sunlight -> Twilight
-  ["#1a3a6b", "#0a1628"], // Twilight -> Abyssal (upper)
-  ["#0a1628", "#030508"], // Abyssal (lower)
-];
-
-function colorsForProgress(p: number): [string, string] {
-  const idx = Math.min(Math.floor(p * ZONE_COLORS.length), ZONE_COLORS.length - 1);
-  return ZONE_COLORS[idx];
 }
 
 export function DepthProvider({ children }: { children: ReactNode }) {
@@ -57,7 +50,7 @@ export function DepthProvider({ children }: { children: ReactNode }) {
       const zone = zoneForDepth(depthM);
       setValue({ depthM, zone, progress: p });
 
-      const [top, bottom] = colorsForProgress(p);
+      const { top, bottom } = depthGradientColors(p);
       const root = document.documentElement;
       root.style.setProperty("--depth-bg-top", top);
       root.style.setProperty("--depth-bg-bottom", bottom);

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SeaCreatures } from "../ocean/SeaCreatures";
 
 const FOCUS_AREAS = [
   { label: "Backend Architecture", detail: "REST APIs, service boundaries, async pipelines" },
@@ -12,7 +13,8 @@ const FOCUS_AREAS = [
 export function About() {
   return (
     <section id="about" className="relative px-6 py-28 sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-4xl">
+      <SeaCreatures />
+      <div className="relative z-[2] mx-auto max-w-4xl">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,8 +41,8 @@ export function About() {
           className="mt-4 max-w-2xl text-base leading-relaxed text-foam-white/75"
         >
           I&apos;m a software and systems engineer who likes owning things
-          end-to-end &mdash; from the database schema to the deploy pipeline
-          that ships it. Recent work spans real-time backends, ML-adjacent
+          end-to-end, from the database schema to the deploy pipeline that
+          ships it. Recent work spans real-time backends, ML-adjacent
           processing pipelines, and cloud infrastructure for small teams
           moving fast.
         </motion.p>

@@ -15,7 +15,7 @@ export function ContactModal() {
     e.preventDefault();
 
     const subject = `Portfolio message from ${name}`;
-    const body = `${message}\n\n—\n${name}\n${email}`;
+    const body = `${message}\n\nFrom: ${name}\n${email}`;
     const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;

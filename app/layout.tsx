@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Tal Zigelnik | Software & Systems Engineer",
   description:
-    "Portfolio of Tal Zigelnik — backend architecture, cloud deployments, API integrations, and AI workflows.",
+    "Portfolio of Tal Zigelnik: diving deep into complex systems across backend architecture, cloud deployments, API integrations, and AI workflows.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

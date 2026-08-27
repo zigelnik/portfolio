@@ -17,33 +17,41 @@ export function Hero() {
         <SubmarineDrawer />
       </header>
 
-      <div className="flex flex-1 flex-col justify-center gap-6 pb-24">
+      <div className="flex flex-1 flex-col justify-center gap-5 pb-24">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="font-mono text-xs uppercase tracking-[0.25em] text-abyssal-black/60"
         >
-          0m &middot; Surface
+          Diving deep into complex systems
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-abyssal-black sm:text-6xl"
+          className="max-w-2xl font-display text-3xl font-semibold leading-[1.1] tracking-tight text-abyssal-black sm:text-5xl"
         >
-          Tal Zigelnik <span className="opacity-50">|</span> Software &amp;
-          Systems Engineer
+          Tal Zigelnik
         </motion.h1>
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="max-w-xl font-display text-lg font-medium text-abyssal-black/80 sm:text-2xl"
+        >
+          Engineered for End-to-End Ownership
+        </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="max-w-xl text-base leading-relaxed text-abyssal-black/75 sm:text-lg"
         >
-          I build backend architecture, cloud deployments, API integrations,
-          and AI-assisted workflows. Scroll down &mdash; every section takes
-          you a little deeper.
+          Computer Science graduate (B.Sc.) and full-stack/backend engineer
+          with hands-on experience in cloud infrastructure, RESTful
+          integrations, and agentic AI workflows. I translate complex
+          business logic into reliable, production-ready applications.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 16 }}

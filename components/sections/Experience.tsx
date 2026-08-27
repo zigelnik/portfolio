@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SeaCreatures } from "../ocean/SeaCreatures";
 
 const ROLE = {
   title: "IVR Developer",
   org: "ITNav",
-  period: "Dec 2025 — Present",
+  period: "Dec 2025 - Present",
   bullets: [
     "Support and maintain enterprise Genesys Cloud Contact Center and IVR production environments, including routing, integrations, configuration and operational troubleshooting.",
     "Monitor live production systems, analyze logs and diagnose infrastructure, connectivity, configuration and integration issues.",
@@ -30,7 +31,8 @@ export function Experience() {
       id="experience"
       className="relative px-6 py-28 sm:px-10 lg:px-16"
     >
-      <div className="mx-auto max-w-5xl">
+      <SeaCreatures />
+      <div className="relative z-[2] mx-auto max-w-5xl">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,8 +52,7 @@ export function Experience() {
           Experience &amp; Skills
         </motion.h2>
         <p className="mt-3 max-w-xl text-sm text-foam-white/50">
-          Signals returning from deeper water &mdash; less light, sharper
-          contrast.
+          Signals returning from deeper water: less light, sharper contrast.
         </p>
 
         <motion.div

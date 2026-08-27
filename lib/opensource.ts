@@ -15,7 +15,7 @@ export const OPEN_SOURCE_SEEDS: OpenSourceSeed[] = [
   {
     slug: "before-i-die-achievements",
     repo: "zigelnik/BeforeIDieAchievements",
-    title: "Before I Die — Achievements",
+    title: "Before I Die: Achievements",
     description:
       "A community bucket-list web app where people share and track life achievements.",
     contribution:

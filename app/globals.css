@@ -51,6 +51,28 @@
   }
 }
 
+@keyframes fish-drift {
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(60vw) scaleY(1.04);
+  }
+  100% {
+    transform: translateX(120vw) scaleY(1);
+  }
+}
+
+@keyframes jelly-bob {
+  0%,
+  100% {
+    transform: translateY(0) scaleX(1);
+  }
+  50% {
+    transform: translateY(-14px) scaleX(0.96);
+  }
+}
+
 html {
   scroll-behavior: auto;
   overflow-x: hidden;
