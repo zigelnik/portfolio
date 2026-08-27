@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { OpenSourceEntry } from "@/lib/opensource";
 import { TechTag } from "../ui/TechTag";
+import { SeaCreatures } from "../ocean/SeaCreatures";
 
 export function OpenSource({ entries }: { entries: OpenSourceEntry[] }) {
   return (
@@ -10,7 +11,8 @@ export function OpenSource({ entries }: { entries: OpenSourceEntry[] }) {
       id="open-source"
       className="relative px-6 py-28 sm:px-10 lg:px-16"
     >
-      <div className="mx-auto max-w-5xl">
+      <SeaCreatures variant="reef" />
+      <div className="relative z-[2] mx-auto max-w-5xl">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -73,6 +73,62 @@
   }
 }
 
+@keyframes turtle-drift {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(30vw) translateY(-10px);
+  }
+  50% {
+    transform: translateX(60vw) translateY(4px);
+  }
+  75% {
+    transform: translateX(90vw) translateY(-6px);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0);
+  }
+}
+
+@keyframes ray-glide {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) scaleY(1);
+  }
+  25% {
+    transform: translateX(30vw) translateY(-18px) scaleY(0.9);
+  }
+  50% {
+    transform: translateX(60vw) translateY(0) scaleY(1);
+  }
+  75% {
+    transform: translateX(90vw) translateY(-14px) scaleY(0.92);
+  }
+}
+
+@keyframes crab-scuttle {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(38px);
+  }
+}
+
+@keyframes starfish-glimmer {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08) rotate(8deg);
+  }
+}
+
 @keyframes drawer-slide-in {
   from {
     transform: translateX(100%);

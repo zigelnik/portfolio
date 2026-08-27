@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ButtonLink } from "../ui/Button";
 import { ContactModal } from "./ContactModal";
+import { SeaCreatures } from "../ocean/SeaCreatures";
 
 export function Contact() {
   return (
@@ -10,7 +11,8 @@ export function Contact() {
       id="contact"
       className="relative flex min-h-[70vh] flex-col justify-center px-6 py-28 sm:px-10 lg:px-16"
     >
-      <div className="mx-auto max-w-2xl text-center">
+      <SeaCreatures variant="floor" />
+      <div className="relative z-[2] mx-auto max-w-2xl text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +66,7 @@ export function Contact() {
         </motion.div>
       </div>
 
-      <p className="mt-24 text-center font-mono text-[11px] text-foam-white/30">
+      <p className="relative z-[2] mt-24 text-center font-mono text-[11px] text-foam-white/30">
         Built with Next.js, Tailwind, Lenis &amp; Framer Motion.
       </p>
     </section>

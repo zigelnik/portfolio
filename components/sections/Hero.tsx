@@ -6,11 +6,13 @@ import { ButtonLink } from "../ui/Button";
 import { DesktopNav } from "../nav/DesktopNav";
 import { SubmarineDrawer } from "../nav/SubmarineDrawer";
 import { scrollToHash } from "@/lib/lenis";
+import { SeaCreatures } from "../ocean/SeaCreatures";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col px-6 sm:px-10 lg:px-16">
-      <header className="flex items-center justify-between py-6">
+      <SeaCreatures variant="hero" />
+      <header className="relative z-[2] flex items-center justify-between py-6">
         <span className="font-mono text-xs uppercase tracking-[0.2em] text-abyssal-black/70">
           TZ &middot; Dive Log
         </span>
@@ -18,7 +20,7 @@ export function Hero() {
         <SubmarineDrawer />
       </header>
 
-      <div className="flex flex-1 flex-col-reverse items-center justify-center gap-10 pb-24 sm:flex-row sm:items-center sm:justify-between sm:gap-8 md:pr-28 lg:pr-36">
+      <div className="relative z-[2] flex flex-1 flex-col-reverse items-center justify-center gap-10 pb-24 sm:flex-row sm:items-center sm:justify-between sm:gap-8 md:pr-28 lg:pr-36">
         <div className="flex flex-col gap-5">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
