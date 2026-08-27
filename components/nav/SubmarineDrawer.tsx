@@ -25,9 +25,11 @@ export function SubmarineDrawer() {
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm" />
+        <Dialog.Overlay
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm data-[state=closed]:[animation:overlay-fade-out_200ms_ease-in] data-[state=open]:[animation:overlay-fade-in_220ms_ease-out]"
+        />
         <Dialog.Content
-          className="fixed inset-y-0 right-0 z-50 flex w-[82vw] max-w-sm flex-col border-l border-white/10 bg-midnight-navy/90 p-6 shadow-2xl backdrop-blur-xl outline-none"
+          className="fixed inset-y-0 right-0 z-50 flex w-[82vw] max-w-sm flex-col border-l border-white/10 bg-midnight-navy/90 p-6 shadow-2xl backdrop-blur-xl outline-none data-[state=closed]:[animation:drawer-slide-out_220ms_ease-in] data-[state=open]:[animation:drawer-slide-in_360ms_cubic-bezier(0.16,1,0.3,1)]"
           aria-describedby={undefined}
         >
           <div className="flex items-center justify-between border-b border-white/10 pb-4">

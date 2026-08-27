@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { DepthProvider } from "@/components/ocean/DepthProvider";
+import { DepthBackground } from "@/components/ocean/DepthBackground";
 import { ZoneBackground } from "@/components/ocean/ZoneBackground";
 import { BubbleCanvas } from "@/components/ocean/BubbleCanvas";
 import { DepthGaugeHUD } from "@/components/ocean/DepthGaugeHUD";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full">
         <DepthProvider>
+          <DepthBackground />
           <BubbleCanvas />
           <ZoneBackground />
           <DepthGaugeHUD />
