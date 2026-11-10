@@ -2,7 +2,7 @@ export type ProjectCategory = "Backend & APIs" | "Cloud & DevOps" | "AI & Automa
 
 export interface ProjectSeed {
   slug: string;
-  repo: string; // owner/repo for GitHub API
+  repo?: string; // owner/repo for GitHub API; omit for private projects
   title: string;
   tagline: string;
   bullets: string[];
@@ -11,6 +11,18 @@ export interface ProjectSeed {
 }
 
 export const PROJECT_SEEDS: ProjectSeed[] = [
+  {
+    slug: "kitchen-agent",
+    title: "Kitchen Agent",
+    tagline: "Agentic Telegram bot that turns a Hebrew voice note into a priced PDF quotation.",
+    bullets: [
+      "Uses the Claude API with structured tool-use to extract a job spec from a Whisper transcription, biased with a custom Hebrew carpentry-trade glossary for accuracy.",
+      "Keeps pricing logic deterministic and separate from the LLM by design, then generates an RTL PDF quote and delivers it back over the Telegram Bot API.",
+      "Built for a real small-business customer, a freelance kitchen carpenter, with its own automated test suite.",
+    ],
+    categories: ["AI & Automations", "Backend & APIs"],
+    techTags: ["Python", "FastAPI", "Claude API", "Whisper", "Telegram Bot API", "ReportLab"],
+  },
   {
     slug: "oosht",
     repo: "zigelnik/oosht-public",
@@ -29,14 +41,28 @@ export const PROJECT_SEEDS: ProjectSeed[] = [
     slug: "fracture-capture",
     repo: "zigelnik/Fracture-Capture",
     title: "FractureCapture",
-    tagline: "Web application detecting bone fractures from X-ray images.",
+    tagline: "Web application detecting and localizing bone fractures in X-ray images with YOLOv8.",
     bullets: [
-      "Built backend architecture using Node.js, Express, and MongoDB with clear separation of concerns.",
-      "Implemented an asynchronous processing pipeline for near real-time inference results.",
+      "Reached 81% fracture detection accuracy with YOLOv8, after leading data gathering and labeling and resolving inconsistent bounding-box labels and polygon annotation formats.",
       "Led a team of 6, including task planning, code reviews, and integration (Agile).",
+      "Built backend architecture using Node.js, Express, and MongoDB, with an asynchronous processing pipeline for near real-time inference results.",
+      "Experimented with CNN, Mask R-CNN, and Faster R-CNN architectures for detection, classification, and localization.",
     ],
-    categories: ["Backend & APIs", "AI & Automations"],
-    techTags: ["Node.js", "Express", "MongoDB", "Agile"],
+    categories: ["AI & Automations", "Backend & APIs"],
+    techTags: ["YOLOv8", "PyTorch", "TensorFlow", "OpenCV", "Node.js", "MongoDB", "React"],
+  },
+  {
+    slug: "pneumonia-detection",
+    repo: "zigelnik/Pneumonia-Detection-Using-Chest-x-rays",
+    title: "Pneumonia Detection",
+    tagline: "Deep learning classifier detecting pneumonia from chest X-rays.",
+    bullets: [
+      "Built a CNN using transfer learning on InceptionV3, benchmarked against a scikit-learn KNN baseline.",
+      "Evaluated with precision, recall, F1-score, ROC-AUC, and confusion matrices, using augmentation and hyperparameter tuning to improve generalization.",
+      "Visualized the learned feature space with t-SNE.",
+    ],
+    categories: ["AI & Automations"],
+    techTags: ["TensorFlow", "Keras", "scikit-learn", "Transfer Learning"],
   },
   {
     slug: "scrabble",

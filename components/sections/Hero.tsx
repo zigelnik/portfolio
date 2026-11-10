@@ -84,6 +84,14 @@ export function Hero() {
             >
               GitHub &rarr;
             </ButtonLink>
+            <ButtonLink
+              variant="ghost"
+              href="https://www.linkedin.com/in/tal-zigelnik/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn &rarr;
+            </ButtonLink>
           </motion.div>
         </div>
 

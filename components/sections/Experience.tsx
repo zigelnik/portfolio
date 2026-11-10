@@ -8,21 +8,35 @@ const ROLE = {
   org: "ITNav",
   period: "Dec 2025 - Present",
   bullets: [
-    "Support and maintain enterprise Genesys Cloud Contact Center and IVR production environments, including routing, integrations, configuration and operational troubleshooting.",
-    "Monitor live production systems, analyze logs and diagnose infrastructure, connectivity, configuration and integration issues.",
-    "Work with REST APIs, Webhooks, OAuth and external enterprise systems, troubleshooting communication and data-flow failures.",
-    "Build scripts and automation tools for configuration management, environment migration, deployment and repetitive operational tasks.",
-    "Provision and manage cloud infrastructure and application configuration using Terraform and YAML-based automation.",
-    "Work with internal infrastructure teams, customers and external systems to investigate and resolve production issues.",
-    "Support development, testing and production environments, including deployment, configuration validation and ongoing operational reliability.",
+    "Built an internal Java/Spring Boot tool that compares and deploys Genesys Cloud configuration across environments, with REST controllers, an adapter per resource type (data tables, integrations, prompts, queues, schedules, wrap-up codes), a diff engine, a dependency resolver with cycle detection, and deployments with rollback support.",
+    "Design, build, and maintain IVR call flows in Genesys Cloud Architect, including menus, routing logic, prompts, and schedules that send callers to the right queues.",
+    "Author, version, and deploy Architect flows as YAML with the Archy CLI, and provision Genesys Cloud configuration using Terraform.",
+    "Configure and maintain queues and routing for enterprise Genesys Cloud Contact Center environments, keeping production IVR stable as requirements change.",
+    "Track and analyze flow and interaction logs to diagnose call-flow, routing, and configuration issues, and troubleshoot REST API, Webhook, and OAuth integrations.",
+    "Develop agentic virtual agents (Genesys Cloud AVA) with Claude, using an MCP-based harness and agent skills to define, build, publish, and test agents.",
+    "Work closely with QA, product managers, and developers to investigate and resolve production issues across development, testing, and production environments.",
   ],
 };
 
+const EDUCATION = [
+  {
+    title: "B.Sc. Computer Science",
+    period: "Apr 2022 - Jul 2024",
+    detail: "The College of Management Academic Studies",
+  },
+  {
+    title: "Deep Learning Internship (Academic, Final Year)",
+    period: "2023 - 2024",
+    detail:
+      "Trained and evaluated computer vision models on medical imaging data.",
+  },
+];
+
 const SKILL_GROUPS = [
-  { label: "Contact Center", items: ["Genesys Cloud", "IVR Routing", "Webhooks", "OAuth"] },
-  { label: "Cloud & IaC", items: ["Terraform", "YAML", "CI/CD", "Vercel"] },
-  { label: "Languages", items: ["Python", "Java", "Node.js", "TypeScript"] },
-  { label: "AI Tooling", items: ["Cursor", "Claude Code"] },
+  { label: "Contact Center", items: ["Genesys Cloud", "Architect", "Archy", "IVR Flows & Queues", "Genesys AVA"] },
+  { label: "Backend & Cloud", items: ["Spring Boot", "FastAPI", "Node.js", "Terraform", "CI/CD"] },
+  { label: "Languages", items: ["Java", "Python", "TypeScript", "React"] },
+  { label: "AI & ML", items: ["Claude API", "Agentic tool-use", "MCP", "TensorFlow / PyTorch", "Claude Code"] },
 ];
 
 export function Experience() {
@@ -49,7 +63,7 @@ export function Experience() {
           transition={{ duration: 0.6, delay: 0.05 }}
           className="mt-3 font-display text-2xl font-semibold text-foam-white sm:text-3xl"
         >
-          Experience &amp; Skills
+          Experience, Education &amp; Skills
         </motion.h2>
         <p className="mt-3 max-w-xl text-sm text-foam-white/50">
           Signals returning from deeper water: less light, sharper contrast.
@@ -78,6 +92,37 @@ export function Experience() {
               >
                 <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-bio-glow/70" />
                 {bullet}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5 }}
+          className="relative mt-6 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
+        >
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-foam-white/40">
+            Education
+          </p>
+          <ul className="mt-4 space-y-4">
+            {EDUCATION.map((item) => (
+              <li key={item.title}>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h3 className="font-display text-base font-semibold text-foam-white">
+                    {item.title}
+                  </h3>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-bio-glow/70">
+                    {item.period}
+                  </span>
+                </div>
+                {item.detail && (
+                  <p className="mt-1 text-sm leading-relaxed text-foam-white/60">
+                    {item.detail}
+                  </p>
+                )}
               </li>
             ))}
           </ul>

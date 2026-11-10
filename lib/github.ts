@@ -7,7 +7,9 @@ export interface RepoInfo {
   htmlUrl: string;
 }
 
-export interface Project extends ProjectSeed, RepoInfo {}
+export interface Project extends ProjectSeed, Omit<RepoInfo, "htmlUrl"> {
+  htmlUrl: string | null;
+}
 
 interface GitHubRepoResponse {
   html_url: string;
@@ -45,9 +47,11 @@ export async function fetchRepoInfo(repo: string): Promise<RepoInfo> {
 
 export async function getProjects(): Promise<Project[]> {
   return Promise.all(
-    PROJECT_SEEDS.map(async (seed) => ({
-      ...seed,
-      ...(await fetchRepoInfo(seed.repo)),
-    }))
+    PROJECT_SEEDS.map(async (seed): Promise<Project> => {
+      if (!seed.repo) {
+        return { ...seed, stars: 0, primaryLanguage: null, updatedAt: null, htmlUrl: null };
+      }
+      return { ...seed, ...(await fetchRepoInfo(seed.repo)) };
+    })
   );
 }

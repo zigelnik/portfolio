@@ -52,8 +52,13 @@ export function Contact() {
           <ButtonLink variant="ghost" href="mailto:zigelnik@gmail.com">
             zigelnik@gmail.com
           </ButtonLink>
-          <ButtonLink variant="ghost" href="tel:+972523466986">
-            +972 (052) 346-6986
+          <ButtonLink
+            variant="ghost"
+            href="https://www.linkedin.com/in/tal-zigelnik/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
           </ButtonLink>
           <ButtonLink
             variant="ghost"
