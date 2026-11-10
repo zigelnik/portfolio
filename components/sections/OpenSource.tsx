@@ -18,7 +18,7 @@ export function OpenSource({ entries }: { entries: OpenSourceEntry[] }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="font-mono text-xs uppercase tracking-[0.25em] text-foam-white/55"
+          className="font-mono text-xs uppercase tracking-[0.25em] text-foam-white/80"
         >
           ~250m &middot; Twilight Threshold
         </motion.p>
@@ -31,7 +31,7 @@ export function OpenSource({ entries }: { entries: OpenSourceEntry[] }) {
         >
           Open Source
         </motion.h2>
-        <p className="mt-3 max-w-xl text-sm text-foam-white/50">
+        <p className="mt-3 max-w-xl text-sm text-foam-white/75">
           Contributions to projects outside my own dive log.
         </p>
 
@@ -56,17 +56,17 @@ export function OpenSource({ entries }: { entries: OpenSourceEntry[] }) {
                   {entry.title}
                 </h3>
                 {entry.stars > 0 && (
-                  <span className="flex shrink-0 items-center gap-1 font-mono text-[11px] text-foam-white/50">
+                  <span className="flex shrink-0 items-center gap-1 font-mono text-[11px] text-foam-white/75">
                     &#9733; {entry.stars}
                   </span>
                 )}
               </div>
 
-              <p className="mt-2 text-sm leading-relaxed text-foam-white/70">
+              <p className="mt-2 text-sm leading-relaxed text-foam-white/85">
                 {entry.description}
               </p>
 
-              <p className="mt-4 flex gap-2 text-xs leading-relaxed text-foam-white/55">
+              <p className="mt-4 flex gap-2 text-xs leading-relaxed text-foam-white/80">
                 <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-bio-glow/70" />
                 {entry.contribution}
               </p>
@@ -77,7 +77,7 @@ export function OpenSource({ entries }: { entries: OpenSourceEntry[] }) {
                 ))}
               </div>
 
-              <span className="mt-5 font-mono text-xs text-bio-glow/80 transition-colors group-hover:text-bio-glow">
+              <span className="mt-5 font-mono text-xs text-bio-glow/95 transition-colors group-hover:text-bio-glow">
                 View repository &rarr;
               </span>
             </motion.a>

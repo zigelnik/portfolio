@@ -50,7 +50,7 @@ export function ContactModal() {
               </Dialog.Title>
               <Dialog.Description
                 id="contact-modal-description"
-                className="mt-1 font-mono text-xs text-foam-white/50"
+                className="mt-1 font-mono text-xs text-foam-white/75"
               >
                 Opens a pre-filled draft in your email client.
               </Dialog.Description>
@@ -59,7 +59,7 @@ export function ContactModal() {
               <button
                 type="button"
                 aria-label="Close"
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/20 text-foam-white/80 hover:border-bio-glow hover:text-bio-glow"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/20 text-foam-white/90 hover:border-bio-glow hover:text-bio-glow"
               >
                 &times;
               </button>
@@ -70,7 +70,7 @@ export function ContactModal() {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="contact-name"
-                className="font-mono text-[11px] uppercase tracking-[0.15em] text-foam-white/50"
+                className="font-mono text-[11px] uppercase tracking-[0.15em] text-foam-white/75"
               >
                 Name
               </label>
@@ -80,7 +80,7 @@ export function ContactModal() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="rounded-lg border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-foam-white outline-none transition-colors placeholder:text-foam-white/30 focus:border-bio-glow"
+                className="rounded-lg border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-foam-white outline-none transition-colors placeholder:text-foam-white/55 focus:border-bio-glow"
                 placeholder="Your name"
               />
             </div>
@@ -88,7 +88,7 @@ export function ContactModal() {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="contact-email"
-                className="font-mono text-[11px] uppercase tracking-[0.15em] text-foam-white/50"
+                className="font-mono text-[11px] uppercase tracking-[0.15em] text-foam-white/75"
               >
                 Email
               </label>
@@ -98,7 +98,7 @@ export function ContactModal() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="rounded-lg border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-foam-white outline-none transition-colors placeholder:text-foam-white/30 focus:border-bio-glow"
+                className="rounded-lg border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-foam-white outline-none transition-colors placeholder:text-foam-white/55 focus:border-bio-glow"
                 placeholder="you@example.com"
               />
             </div>
@@ -106,7 +106,7 @@ export function ContactModal() {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="contact-message"
-                className="font-mono text-[11px] uppercase tracking-[0.15em] text-foam-white/50"
+                className="font-mono text-[11px] uppercase tracking-[0.15em] text-foam-white/75"
               >
                 Message
               </label>
@@ -116,7 +116,7 @@ export function ContactModal() {
                 rows={4}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="resize-none rounded-lg border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-foam-white outline-none transition-colors placeholder:text-foam-white/30 focus:border-bio-glow"
+                className="resize-none rounded-lg border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-foam-white outline-none transition-colors placeholder:text-foam-white/55 focus:border-bio-glow"
                 placeholder="What are you building?"
               />
             </div>

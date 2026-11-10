@@ -12,11 +12,11 @@ export function Hero() {
   return (
     <section id="home" className="relative flex min-h-screen flex-col px-6 sm:px-10 lg:px-16">
       <SeaCreatures variant="surface" />
-      <header className="relative z-[2] flex items-center justify-between py-6">
+      <header className="relative z-40 flex items-center justify-between py-6">
         <button
           type="button"
           onClick={() => scrollToHash("#home")}
-          className="font-mono text-xs uppercase tracking-[0.2em] text-abyssal-black/70 transition-colors hover:text-abyssal-black"
+          className="font-mono text-xs uppercase tracking-[0.2em] text-abyssal-black/85 transition-colors hover:text-abyssal-black"
         >
           TZ &middot; Dive Log
         </button>
@@ -30,7 +30,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-mono text-xs uppercase tracking-[0.25em] text-abyssal-black/60"
+            className="font-mono text-xs uppercase tracking-[0.25em] text-abyssal-black/80"
           >
             Diving deep into complex systems
           </motion.p>
@@ -46,7 +46,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="max-w-xl font-display text-lg font-medium text-abyssal-black/80 sm:text-2xl"
+            className="max-w-xl font-display text-lg font-medium text-abyssal-black/90 sm:text-2xl"
           >
             Engineered for End-to-End Ownership
           </motion.h2>
@@ -54,7 +54,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="max-w-xl text-base leading-relaxed text-abyssal-black/75 sm:text-lg"
+            className="max-w-xl text-base leading-relaxed text-abyssal-black/90 sm:text-lg"
           >
             Computer Science graduate (B.Sc.) and full-stack/backend engineer
             with hands-on experience in cloud infrastructure, RESTful
@@ -78,6 +78,7 @@ export function Hero() {
             </ButtonLink>
             <ButtonLink
               variant="ghost"
+              className="border-abyssal-black/35! text-abyssal-black/90! hover:border-abyssal-black! hover:text-abyssal-black!"
               href="https://github.com/zigelnik"
               target="_blank"
               rel="noreferrer"
@@ -86,6 +87,7 @@ export function Hero() {
             </ButtonLink>
             <ButtonLink
               variant="ghost"
+              className="border-abyssal-black/35! text-abyssal-black/90! hover:border-abyssal-black! hover:text-abyssal-black!"
               href="https://www.linkedin.com/in/tal-zigelnik/"
               target="_blank"
               rel="noreferrer"

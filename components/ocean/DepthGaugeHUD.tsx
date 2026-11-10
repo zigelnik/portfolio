@@ -33,7 +33,7 @@ export function DepthGaugeHUD() {
         <span className="font-mono text-sm font-medium tracking-tight text-foam-white">
           {depthM.toLocaleString()}m
         </span>
-        <span className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.15em] text-foam-white/60">
+        <span className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.15em] text-foam-white/80">
           {zone.name}
         </span>
       </div>

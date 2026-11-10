@@ -20,7 +20,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="font-mono text-xs uppercase tracking-[0.25em] text-foam-white/60"
+          className="font-mono text-xs uppercase tracking-[0.25em] text-foam-white/80"
         >
           ~50m &middot; Sunlight Zone
         </motion.p>
@@ -38,7 +38,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-4 max-w-2xl text-base leading-relaxed text-foam-white/75"
+          className="mt-4 max-w-2xl text-base leading-relaxed text-foam-white/90"
         >
           I&apos;m a software and systems engineer who likes owning things
           end-to-end, from the database schema to the deploy pipeline that
@@ -60,7 +60,7 @@ export function About() {
               <p className="font-display text-sm font-semibold text-foam-white">
                 {area.label}
               </p>
-              <p className="mt-1 font-mono text-xs text-foam-white/55">
+              <p className="mt-1 font-mono text-xs text-foam-white/80">
                 {area.detail}
               </p>
             </motion.div>

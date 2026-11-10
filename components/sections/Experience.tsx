@@ -52,7 +52,7 @@ export function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="font-mono text-xs uppercase tracking-[0.25em] text-foam-white/50"
+          className="font-mono text-xs uppercase tracking-[0.25em] text-foam-white/75"
         >
           ~400m &middot; Twilight Zone
         </motion.p>
@@ -65,7 +65,7 @@ export function Experience() {
         >
           Experience, Education &amp; Skills
         </motion.h2>
-        <p className="mt-3 max-w-xl text-sm text-foam-white/50">
+        <p className="mt-3 max-w-xl text-sm text-foam-white/75">
           Signals returning from deeper water: less light, sharper contrast.
         </p>
 
@@ -77,18 +77,18 @@ export function Experience() {
           className="relative mt-12 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
         >
           <span className="absolute right-6 top-6 h-2 w-2 rounded-full bg-bio-glow animate-sonar-pulse" />
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-bio-glow/70">
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-bio-glow/90">
             {ROLE.period}
           </p>
           <h3 className="mt-2 font-display text-xl font-semibold text-foam-white">
             {ROLE.title}
           </h3>
-          <p className="mt-0.5 text-sm text-foam-white/50">{ROLE.org}</p>
+          <p className="mt-0.5 text-sm text-foam-white/75">{ROLE.org}</p>
           <ul className="mt-5 space-y-2.5">
             {ROLE.bullets.map((bullet) => (
               <li
                 key={bullet}
-                className="flex gap-2.5 text-sm leading-relaxed text-foam-white/70"
+                className="flex gap-2.5 text-sm leading-relaxed text-foam-white/85"
               >
                 <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-bio-glow/70" />
                 {bullet}
@@ -104,7 +104,7 @@ export function Experience() {
           transition={{ duration: 0.5 }}
           className="relative mt-6 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
         >
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-foam-white/40">
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-foam-white/65">
             Education
           </p>
           <ul className="mt-4 space-y-4">
@@ -114,12 +114,12 @@ export function Experience() {
                   <h3 className="font-display text-base font-semibold text-foam-white">
                     {item.title}
                   </h3>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-bio-glow/70">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-bio-glow/90">
                     {item.period}
                   </span>
                 </div>
                 {item.detail && (
-                  <p className="mt-1 text-sm leading-relaxed text-foam-white/60">
+                  <p className="mt-1 text-sm leading-relaxed text-foam-white/80">
                     {item.detail}
                   </p>
                 )}
@@ -137,12 +137,12 @@ export function Experience() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
             >
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-foam-white/40">
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-foam-white/65">
                 {group.label}
               </p>
               <ul className="mt-2 space-y-1">
                 {group.items.map((item) => (
-                  <li key={item} className="text-sm text-foam-white/75">
+                  <li key={item} className="text-sm text-foam-white/90">
                     {item}
                   </li>
                 ))}

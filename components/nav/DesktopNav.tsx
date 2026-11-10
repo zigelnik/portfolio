@@ -14,7 +14,7 @@ export function DesktopNav() {
             e.preventDefault();
             scrollToHash(link.href);
           }}
-          className="font-mono text-xs uppercase tracking-[0.15em] text-foam-white/70 transition-colors hover:text-bio-glow"
+          className="font-mono text-xs uppercase tracking-[0.15em] text-foam-white/85 transition-colors hover:text-bio-glow"
         >
           {link.label}
         </a>

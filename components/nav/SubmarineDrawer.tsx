@@ -16,7 +16,7 @@ export function SubmarineDrawer() {
         <button
           type="button"
           aria-label="Open navigation hatch"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-foam-white transition-colors hover:border-bio-glow hover:text-bio-glow md:hidden"
+          className="fixed right-6 top-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-black/35 text-foam-white shadow-lg backdrop-blur-md transition-colors hover:border-bio-glow hover:text-bio-glow sm:right-10 md:hidden"
         >
           <span className="sr-only">Menu</span>
           <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
@@ -37,7 +37,7 @@ export function SubmarineDrawer() {
               <Dialog.Title className="font-mono text-xs uppercase tracking-[0.2em] text-bio-glow">
                 Control Hatch
               </Dialog.Title>
-              <p className="mt-1 font-mono text-[11px] text-foam-white/50">
+              <p className="mt-1 font-mono text-[11px] text-foam-white/75">
                 {depthM.toLocaleString()}m &middot; {zone.name}
               </p>
             </div>
@@ -45,7 +45,7 @@ export function SubmarineDrawer() {
               <button
                 type="button"
                 aria-label="Close navigation"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-foam-white/80 hover:border-bio-glow hover:text-bio-glow"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-foam-white/90 hover:border-bio-glow hover:text-bio-glow"
               >
                 &times;
               </button>
@@ -64,7 +64,7 @@ export function SubmarineDrawer() {
                 }}
                 className="group flex items-center gap-3 rounded-lg px-2 py-3 text-lg font-medium text-foam-white transition-colors hover:text-bio-glow"
               >
-                <span className="font-mono text-xs text-foam-white/40 group-hover:text-bio-glow">
+                <span className="font-mono text-xs text-foam-white/65 group-hover:text-bio-glow">
                   0{i + 1}
                 </span>
                 {link.label}
@@ -72,7 +72,7 @@ export function SubmarineDrawer() {
             ))}
           </nav>
 
-          <div className="mt-auto border-t border-white/10 pt-4 font-mono text-[11px] text-foam-white/40">
+          <div className="mt-auto border-t border-white/10 pt-4 font-mono text-[11px] text-foam-white/65">
             Hull integrity nominal. Descend to explore.
           </div>
         </Dialog.Content>

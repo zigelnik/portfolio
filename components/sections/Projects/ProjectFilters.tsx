@@ -37,7 +37,7 @@ export function ProjectFilters({
               "rounded-full border px-4 py-2 font-mono text-xs uppercase tracking-wide transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bio-glow",
               isActive
                 ? "border-bio-glow bg-bio-glow/10 text-bio-glow shadow-[0_0_16px_rgba(77,255,224,0.25)]"
-                : "border-white/15 text-foam-white/60 hover:border-white/35 hover:text-foam-white"
+                : "border-white/15 text-foam-white/80 hover:border-white/35 hover:text-foam-white"
             )}
           >
             {filter}

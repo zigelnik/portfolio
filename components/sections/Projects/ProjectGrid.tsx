@@ -24,7 +24,7 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="font-mono text-xs uppercase tracking-[0.25em] text-foam-white/60"
+          className="font-mono text-xs uppercase tracking-[0.25em] text-foam-white/80"
         >
           ~150m &middot; Edge of the Sunlight Zone
         </motion.p>
