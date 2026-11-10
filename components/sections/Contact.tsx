@@ -18,7 +18,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="font-mono text-xs uppercase tracking-[0.25em] text-bio-glow/70"
+          className="font-mono text-xs uppercase tracking-[0.25em] text-bio-glow/90"
         >
           ~1000m &middot; Abyssal Trench
         </motion.p>
@@ -36,10 +36,12 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-4 text-foam-white/60"
+          className="mt-4 text-foam-white/80"
         >
-          Open to backend, cloud, and AI-workflow projects. Reach out and
-          I&apos;ll get back to you.
+          Open to backend, cloud, and AI-workflow projects, and happy to
+          help solve general problems too: website building, custom software
+          solutions, automations, and more. Reach out and I&apos;ll get back
+          to you.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -71,7 +73,7 @@ export function Contact() {
         </motion.div>
       </div>
 
-      <p className="relative z-[2] mt-24 text-center font-mono text-[11px] text-foam-white/30">
+      <p className="relative z-[2] mt-24 text-center font-mono text-[11px] text-foam-white/55">
         Built with Next.js, Tailwind, Lenis &amp; Framer Motion.
       </p>
     </section>
